@@ -86,7 +86,7 @@ $(document).ready(function () {
 
 
 // For demo purpose - animation css script
-function animationHover(element, animation){
+window.animationHover = function(element, animation){
     element = $(element);
     element.hover(
         function() {
@@ -98,7 +98,7 @@ function animationHover(element, animation){
                 element.removeClass('animated ' + animation);
             }, 2000);
         });
-}
+};
 
 // Minimalize menu when screen is less than 768px
 $(function() {
@@ -111,7 +111,7 @@ $(function() {
     })
 })
 
-function SmoothlyMenu() {
+window.SmoothlyMenu = function() {
     if (!$('body').hasClass('mini-navbar') || $('body').hasClass('body-small')) {
         // Hide menu in order to smoothly turn on when maximize menu
         $('#side-menu').hide();
@@ -130,10 +130,10 @@ function SmoothlyMenu() {
         // Remove all inline style from jquery fadeIn function to reset menu state
         $('#side-menu').removeAttr('style');
     }
-}
+};
 
 // Dragable panels
-function WinMove() {
+window.WinMove = function() {
     var element = "[class*=col]";
     var handle = ".ibox-title";
     var connect = "[class*=col]";
